@@ -34,7 +34,7 @@ function taches(tache= tache,text = ''){
     // div.innerText += '<label for="id'+i+'" class="lb">'+text+'</label>'
 }
 
-const img = document.images
+const img = document.querySelectorAll('.tache img')
 function sup (){
 
     for(let j in img){
@@ -79,6 +79,7 @@ function veri(tache,i){
 }
 
 let i = 0
+let compte = 0
 const valider = document.querySelector('.val')
 valider.onclick = ()=>{
     const res = recu(data)
@@ -86,6 +87,7 @@ valider.onclick = ()=>{
         data.value = ''
         taches(tache,text = res)
         i++
+        compte ++
     }
 }
 
@@ -179,3 +181,27 @@ afaire.onclick = ()=> veri_f(1)
 
 const faire = document.getElementById('faire')
 faire.onclick = ()=> veri_f(0)
+
+
+const pop = document.querySelector('.pop')
+const pop_img = pop.querySelectorAll('img')
+setInterval(() => {
+    const h = innerHeight
+    const w = innerWidth -355
+    if (w > 1200){
+        pop.style.left = ''+w+'px'
+        pop.style.top = ''+h-450+'px'
+        if (compte % 2 == 0){
+            pop.style.display = 'block'
+            setTimeout(() => {
+                pop.style.opacity = '1'
+                for(let i in pop_img){
+                    pop_img[i].style.opacity = '1'
+                }
+            }, 1500);
+        }
+
+    }
+    console.log(h,w)
+    
+}, 1000);

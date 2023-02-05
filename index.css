@@ -1,7 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+*{margin: 0;padding: 0;}
 
 header{
     text-align: center;
@@ -106,7 +103,7 @@ header div{
 .tache{
     margin-left: 10%;
     width: 80%;
-    transition: all 1s;
+    /* transition: all 1s; */
 }
 
 .tache1{
@@ -124,11 +121,119 @@ header div{
     text-align: justify;
 }
 
-img{
+.tache1 img{
     width: 20px;
     float: right;
     border: 1px solid black;
+    cursor: pointer;
 }
 input[type="checkbox"]{
     display: none;
+}
+.on{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px;
+    background-color: rgba(49, 119, 184, 0.692);
+    width: 100px;
+    display: inline-block;
+}
+.croix{
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 20px;
+    display: inline-block;
+    transform: translate(3px,-30px);
+    background-color: rgb(0, 0, 0);
+    margin: 10px;
+}
+
+.croix1,.croix2{
+    width: 3px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5px;
+    display: inline-block;
+}
+.croix1{
+    transform: translate(5px) rotate(50deg);
+}
+.croix2{
+    transform: translate(-2px) rotate(-50deg);
+}
+.pop{
+    width: 350px;
+    padding-top: 20px;
+    background-color: black;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: all 1s;
+    
+}
+.pop img{
+    border: 5px solid black;
+    width: 300px;
+    border-radius: 15px;
+}
+.info{
+    width: 100%;
+}
+.nom{
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: capitalize;
+    color: aqua;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.reseau{
+    background-color: rgb(0, 0, 0);
+}
+.r1{
+    display: inline-block;
+}
+.r1 img {
+    width: 50px;
+    opacity: 0;
+    transition: all 1s;
+}
+.r1 img[alt="git"] {
+    width: 60px;
+}
+.r1 img[alt="email"] {
+    width: 50px;
+    transform: translate(0,-10px);
+}
+.r1 img[alt="fb"] {
+    width: 38px;
+    transform: translate(0,-10px);
+}
+.r1 img[alt="li"] {
+    width: 60px;
+    transform: translate(-10px,-10px);
+}
+
+@media screen and (max-width:700px) {
+    /* body{
+        background-color: rgb(187, 17, 17);
+
+    } */
+    header div{
+        font-size: 80px;
+    }
+    #ch{
+        width: 70%;
+    }
+
+    .tache1,.choix{
+        font-size: 30px;
+        text-align: justify;
+    }
+    .tache1 img{
+        width: 35px;
+    }
+    
+
 }
