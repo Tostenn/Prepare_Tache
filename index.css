@@ -210,7 +210,10 @@ input[type="checkbox"]{
     transform: translate(-10px,-10px);
 }
 
-@media screen and (max-width:600px){
+
+
+
+@media screen and (min-width:100px){
 
     header div{
         font-size: 30px;
@@ -237,10 +240,34 @@ input[type="checkbox"]{
         width: 30px;
     }
 }
-
-@media screen and (max-width:500px){
+@media screen and (min-width:100px){
 
     .tache1 img{
         width: 25px;
     }
+}
+
+@media screen and (min-width:600px){
+    header div{
+        font-size: 50px;
+    }
+    #ch{
+        width: 70%;
+    }
+    .menu{
+        margin-left: 10%;
+        width: 80%;
+    }
+    .tache1,.choix{
+        font-size: 25px;
+        text-align: justify;
+    }
+    .tache{
+        margin-left: 10%;
+        width: 80%;
+    }
+    .tache1 img{
+        width: 30px;
+    }
+    
 }
