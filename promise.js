@@ -9,6 +9,9 @@ function couleurs(){
     return color
 }
 const data = document.querySelector('#ch')
+const form = document.querySelector('form')
+form.addEventListener( 'submit', e => e.preventDefault())
+
 function recu(data) {
     let datas = data.value 
     if (datas.length){
@@ -21,8 +24,9 @@ function recu(data) {
 const tache = document.querySelector('.tache')
 function taches(tache= tache,text = ''){
     const div = document.createElement('div')
+    
     div.classList.add('tache1')
-    tache.append(div)
+    tache.insertBefore(div,tache.firstElementChild)
     div.innerHTML = '<input type="checkbox" id="id'+i+'">'
     div.innerHTML += '<img src="istockphoto-1223505692-612x612.jpg" alt="">'
     const lab = document.createElement('label')
@@ -31,11 +35,10 @@ function taches(tache= tache,text = ''){
     div.appendChild(lab)
     lab.innerText = text
 
-    // div.innerText += '<label for="id'+i+'" class="lb">'+text+'</label>'
 }
 
-const img = document.querySelectorAll('.tache img')
 function sup (){
+    const img = document.querySelectorAll('.tache img')
 
     for(let j in img){
         img[j].onclick = ()=>{
@@ -182,26 +185,23 @@ afaire.onclick = ()=> veri_f(1)
 const faire = document.getElementById('faire')
 faire.onclick = ()=> veri_f(0)
 
+function viders() {
+    const taches = tache.querySelectorAll('.tache1')
+    let i = 0
+    const t = setInterval(() => {
+        try {taches[i].remove()} catch (error) {}
+        i == taches.length?clearInterval(t) :i++
+    }, 200);
+}
 
-const pop = document.querySelector('.pop')
-const pop_img = pop.querySelectorAll('img')
-setInterval(() => {
-    const h = innerHeight
-    const w = innerWidth -355
-    if (w > 1200){
-        pop.style.left = ''+w+'px'
-        pop.style.top = ''+h-450+'px'
-        if (compte % 2 == 0){
-            pop.style.display = 'block'
-            setTimeout(() => {
-                pop.style.opacity = '1'
-                for(let i in pop_img){
-                    pop_img[i].style.opacity = '1'
-                }
-            }, 1500);
-        }
-
+document.addEventListener('keydown',(e)=>{
+    if (e.ctrlKey && e.key == "e"){
+        viders()
     }
-    console.log(h,w)
-    
-}, 1000);
+})
+
+const vider = document.getElementById('vider')
+vider.onclick = () =>  viders()
+
+
+innerWidth <430? vider.innerHTML = 'vider' :0

@@ -1,8 +1,6 @@
 *{margin: 0;padding: 0;}
 
-header{
-    text-align: center;
-}
+header{text-align: center;}
 header div{
     font-weight: bold;
     text-transform: capitalize;
@@ -177,9 +175,8 @@ input[type="checkbox"]{
     width: 300px;
     border-radius: 15px;
 }
-.info{
-    width: 100%;
-}
+.info{width: 100%;}
+
 .nom{
     font-weight: bold;
     font-size: 30px;
@@ -188,24 +185,22 @@ input[type="checkbox"]{
     letter-spacing: 3px;
     text-transform: uppercase;
 }
-.reseau{
-    background-color: rgb(0, 0, 0);
-}
-.r1{
-    display: inline-block;
-}
+.reseau{background-color: rgb(0, 0, 0);}
+
+.r1{display: inline-block;}
+
 .r1 img {
     width: 50px;
     opacity: 0;
     transition: all 1s;
 }
-.r1 img[alt="git"] {
-    width: 60px;
-}
+.r1 img[alt="git"] { width: 60px;}
+
 .r1 img[alt="email"] {
     width: 50px;
     transform: translate(0,-10px);
 }
+
 .r1 img[alt="fb"] {
     width: 38px;
     transform: translate(0,-10px);
@@ -215,25 +210,37 @@ input[type="checkbox"]{
     transform: translate(-10px,-10px);
 }
 
-@media screen and (max-width:700px) {
-    /* body{
-        background-color: rgb(187, 17, 17);
+@media screen and (max-width:600px){
 
-    } */
     header div{
-        font-size: 80px;
+        font-size: 30px;
     }
     #ch{
-        width: 70%;
+        width: 50%;
     }
-
+    .menu{
+        margin-left: 10px;
+        width: 95%;
+    }
     .tache1,.choix{
-        font-size: 30px;
+        font-size: 20px;
         text-align: justify;
     }
-    .tache1 img{
-        width: 35px;
+    .choix{
+        font-size: 17px;
     }
-    
+    .tache{
+        margin: 0;
+        width: 100%;
+    }
+    .tache1 img{
+        width: 30px;
+    }
+}
 
+@media screen and (max-width:500px){
+
+    .tache1 img{
+        width: 25px;
+    }
 }
